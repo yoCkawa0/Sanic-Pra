@@ -1,0 +1,12 @@
+aiofiles==0.7.0
+autopep8==1.5.7
+httptools==0.3.0
+multidict==5.2.0
+peewee==3.14.4
+pycodestyle==2.7.0
+sanic==21.9.1
+sanic-routing==0.7.1
+toml==0.10.2
+ujson==4.2.0
+uvloop==0.16.0
+websockets==10.0
