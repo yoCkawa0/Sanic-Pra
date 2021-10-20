@@ -1,16 +1,7 @@
 import pytest
-from sanic import Sanic, response
-from sanic_testing import TestManager
-from sanic import Sanic
-from sanic.response import text
 from peewee import *
-import peewee as pe
-# import psycopg2
 import json as pyjson
 from ..main import *
-
-# psql_db = PostgresqlDatabase(
-#     'testdb', host='localhost', port=8881, user='postgres', password='example')
 
 
 @pytest.fixture(scope="session", autouse=True)
@@ -53,8 +44,20 @@ def test_get_todo(request):
 def test_get_all_todos(request):
     _, response = app.test_client.get('/todos')
     print(response.json)
-    assert response.json == {"todos": [{"id": 1, "todoTitle": "task1"}, {"id": 2, "todoTitle": "task2"}, {"id": 3, "todoTitle": "task1"}, {"id": 4, "todoTitle": "task2"}, {
-        "id": 5, "todoTitle": "task100"}, {"id": 6, "todoTitle": "task100"}, {"id": 9, "todoTitle": "task100"}, {"id": 20, "todoTitle": "task100"}, {"id": 10, "todoTitle": "task100"}, {"id": 11, "todoTitle": "task100"}]}
+    assert response.json == {
+        "todos": [
+            {"id": 1, "todoTitle": "task1"},
+            {"id": 2, "todoTitle": "task2"},
+            {"id": 3, "todoTitle": "task1"},
+            {"id": 4, "todoTitle": "task2"},
+            {"id": 5, "todoTitle": "task100"},
+            {"id": 6, "todoTitle": "task100"},
+            {"id": 9, "todoTitle": "task100"},
+            {"id": 20, "todoTitle": "task100"},
+            {"id": 10, "todoTitle": "task100"},
+            {"id": 11, "todoTitle": "task100"}
+        ]
+    }
 
 
 def test_delete_todo(request):
@@ -66,12 +69,14 @@ def test_delete_todo(request):
 def test_add_todo(request):
     with psql_db.atomic()as txn:
         assert len(TodoItems.select().where(
-            TodoItems.todoTitle == "task200")) == 0
+            TodoItems.todoTitle == "task200"
+        )) == 0
         data = {"todoTitle": "task200"}
         _, response = app.test_client.post(
-            'todo', data=pyjson.dumps(data))
+            'todo', data=pyjson.dumps(data)
+        )
         assert response.json == {'!added': 'todo!'}
         assert len(TodoItems.select().where(
-            TodoItems.todoTitle == "task200")
-        ) == 1
+            TodoItems.todoTitle == "task200"
+        )) == 1
         txn.rollback()

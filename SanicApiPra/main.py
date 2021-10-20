@@ -3,9 +3,12 @@ from sanic.response import text
 from sanic.response import json
 from peewee import *
 import peewee as pe
-import psycopg2
 
+# main_db
+# psql_db = PostgresqlDatabase(
+#     'maindb', host='localhost', port=8081, user='postgres', password='example')
 
+# test_db
 psql_db = PostgresqlDatabase(
     'testdb', host='localhost', port=8881, user='postgres', password='example')
 
@@ -64,6 +67,7 @@ async def delete_todo(request, id):
     todo = TodoItems.get(TodoItems.id == id)
     todo.delete_instance()
     return json({'!deleted': 'todo!'})
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8000, debug=True)
