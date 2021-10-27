@@ -7,14 +7,6 @@ async def test(request):
     return json({'hello': 'world'})
 
 
-# def select_items():
-#     return TodoItems.select()
-
-
-# def get_all_todos(db):
-#     return db.select(Todos)
-
-
 @app.route('/todos', methods=['GET'])
 async def get_all_todes(request):
     todos = TodoItems.select()
