@@ -42,3 +42,17 @@ Sanic を用いて RESTful API を実装したい.<br>
 <!-- First ,you need to create new database and change the dbname in the source code. -->
 
 最初に Database を作成し、ソースコードに追加(編集)する必要があります。
+
+
+## Poetry
+
+```shell
+    # 仮想環境の作成
+    $ poetry new api_sanic
+    # 仮想環境の有効化
+    $ poetry shell 
+    # 
+    $ poetry add (パッケージ名)
+    # pyproject.tomlに記載のパケージをインストール
+    $ poetry install
+```
