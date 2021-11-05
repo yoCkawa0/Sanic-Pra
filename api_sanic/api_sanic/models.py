@@ -2,8 +2,11 @@ from peewee import *
 import peewee as pe
 
 
+# psql_db = PostgresqlDatabase(
+#     'postgres', host='localhost', port=5555, user='postgres', password='')
+
 psql_db = PostgresqlDatabase(
-    'testdb', host='localhost', port=8881, user='postgres', password='example')
+    'postgres', host='db', port=5432, user='postgres', password='example')
 
 class TodoItems(pe.Model):
     todoTitle = pe.CharField()
