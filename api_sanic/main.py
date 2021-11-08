@@ -2,7 +2,7 @@ from sanic import Sanic
 from sanic.response import text
 from sanic.response import json
 from peewee import *
-import peewee as pe
+# import peewee as pe
 # import psycopg2
 
 from api_sanic.api import app

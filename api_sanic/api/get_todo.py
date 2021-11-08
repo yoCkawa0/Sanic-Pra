@@ -1,15 +1,12 @@
 from api_sanic.api import app
 from sanic.response import json
-from api_sanic.models import TodoItems
-
-@app.route('/', methods=['GET'])
-async def test(request):
-    return json({'hello': 'world'})
+# from api_sanic.models import TodoItem
+from api_sanic.models import *
 
 
 @app.route('/todos', methods=['GET'])
 async def get_all_todes(request):
-    todos = TodoItems.select()
+    todos = TodoItem.select()
     # todo = select_items()
     res = {
         "todos": []
@@ -17,12 +14,12 @@ async def get_all_todes(request):
     for todo in todos:
         res["todos"].append({
             "id": todo.id,
-            "todoTitle": todo.todoTitle
+            "todo_title": todo.todo_title
         })
     return json(res)
 
 
 @app.route('/todo/<id:int>', methods=['GET'])
 async def get_todo(request, id):
-    todotitle = TodoItems.get(TodoItems.id == id)
-    return json({id: todotitle.todoTitle})
+    todo_title = TodoItem.get(TodoItem.id == id)
+    return json({id: todo_title.todo_title})
