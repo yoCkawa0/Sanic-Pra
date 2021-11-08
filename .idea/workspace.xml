@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a6a4ab85-5bc7-4659-808e-ffc10c62d3cf" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/api_sanic/api_sanic/api/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/api_sanic/api_sanic/api/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api_sanic/api_sanic/api/add_todo.py" beforeDir="false" afterPath="$PROJECT_DIR$/api_sanic/api_sanic/api/add_todo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api_sanic/api_sanic/api/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/api_sanic/api_sanic/api/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api_sanic/api_sanic/api/delete_todo.py" beforeDir="false" afterPath="$PROJECT_DIR$/api_sanic/api_sanic/api/delete_todo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api_sanic/api_sanic/api/get_todo.py" beforeDir="false" afterPath="$PROJECT_DIR$/api_sanic/api_sanic/api/get_todo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api_sanic/api_sanic/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/api_sanic/api_sanic/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api_sanic/api_sanic/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/api_sanic/api_sanic/models.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedIndex" value="1" />
+  </component>
+  <component name="ProjectId" id="20cwKbUsLV2FTlkVNW1CChBvcKM" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/api_sanic/src/api" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a6a4ab85-5bc7-4659-808e-ffc10c62d3cf" name="Changes" comment="" />
+      <created>1636357122528</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1636357122528</updated>
+      <workItem from="1636357126692" duration="85000" />
+      <workItem from="1636357227048" duration="2633000" />
+      <workItem from="1636363132469" duration="19000" />
+      <workItem from="1636363154912" duration="33000" />
+      <workItem from="1636363191276" duration="41000" />
+      <workItem from="1636363244802" duration="1498000" />
+      <workItem from="1636366086645" duration="812000" />
+      <workItem from="1636374387739" duration="37000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>

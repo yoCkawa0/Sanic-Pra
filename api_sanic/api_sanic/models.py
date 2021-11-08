@@ -1,3 +1,4 @@
+from collections import defaultdict
 import datetime
 from peewee import *
 # import peewee as pe
@@ -11,11 +12,22 @@ class BaseModel(Model):
         database = db
 
 
+class User(BaseModel):
+    # userid = AutoField()
+    user_name = CharField()
+
+    class Meta:
+        table_name = "users"
+
+
 class TodoItem(BaseModel):
     # todoid = AutoField()
-    todoTitle = CharField()
-    created_time = DateTimeField(default=datetime.datetime.now)
-    deleted_time = DateTimeField(default=datetime.datetime.now)
+    todo_title = CharField()
+    user = ForeignKeyField(User, backref='todo_items')
+    # createdTime = TimestampField()
+    created_at = DateTimeField(default=datetime.datetime.now)
+    updated_at = DateTimeField(default=datetime.datetime.now)
+    deleted_at = DateTimeField(null=True)
 
     class Meta:
         table_name = "todo_items"
@@ -39,7 +51,9 @@ class ConnectTodo(BaseModel):
 
 
 db.connect()
-# db.create_tables([TodoItem, Tag, ConnectTodo])
-db.create_tables([TodoItem])
-db.create_tables([Tag])
-db.create_tables([ConnectTodo])
+db.create_tables([User, TodoItem, Tag, ConnectTodo])
+
+# db.create_tables([Tag])
+# db.create_tables([User])
+# db.create_tables([TodoItem])
+# db.create_tables([ConnectTodo])
