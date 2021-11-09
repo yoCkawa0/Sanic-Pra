@@ -8,6 +8,10 @@ db = PostgresqlDatabase('postgres', host='db', port=5432, user='postgres', passw
 
 
 class BaseModel(Model):
+    created_at = DateTimeField(default=datetime.datetime.now)
+    updated_at = DateTimeField(default=datetime.datetime.now)
+    deleted_at = DateTimeField(null=True)
+
     class Meta:
         database = db
 
@@ -25,9 +29,9 @@ class TodoItem(BaseModel):
     todo_title = CharField()
     user = ForeignKeyField(User, backref='todo_items')
     # createdTime = TimestampField()
-    created_at = DateTimeField(default=datetime.datetime.now)
-    updated_at = DateTimeField(default=datetime.datetime.now)
-    deleted_at = DateTimeField(null=True)
+    # created_at = DateTimeField(default=datetime.datetime.now)
+    # updated_at = DateTimeField(default=datetime.datetime.now)
+    # deleted_at = DateTimeField(null=True)
 
     class Meta:
         table_name = "todo_items"
