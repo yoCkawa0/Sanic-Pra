@@ -18,7 +18,7 @@ class BaseModel(Model):
 
 class User(BaseModel):
     # userid = AutoField()
-    user_name = CharField()
+    user_name = CharField(unique=True)
 
     class Meta:
         table_name = "users"
@@ -39,7 +39,7 @@ class TodoItem(BaseModel):
 
 class Tag(BaseModel):
     # tagid = AutoField()
-    tag_name = CharField()
+    tag_name = CharField(unique=True)
 
     class Meta:
         table_name = "tags"
@@ -56,6 +56,7 @@ class ConnectTodo(BaseModel):
 
 db.connect()
 db.create_tables([User, TodoItem, Tag, ConnectTodo])
+# db['users'].create_index(['username'], unique=True)
 
 # db.create_tables([Tag])
 # db.create_tables([User])

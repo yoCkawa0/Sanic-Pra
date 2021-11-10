@@ -13,7 +13,9 @@ services:
     tty: true
     depends_on:
       - db
-    command: python3 ./api_sanic/main.py
+    # command: python3 ./api_sanic/main.py
+    command: bash -c "python3 ./api_sanic/migrate.py && python3 ./api_sanic/main.py"
+    
 
   db:
     image: postgres
