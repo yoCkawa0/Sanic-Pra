@@ -27,7 +27,12 @@ async def get_all_todes(request):
             
     
     for q in query:
-        pprint(vars(q.connecttodo.tag))
+        tag: Tag = q.connecttodo.tag
+        user: User = q.user
+
+        pprint(vars(q))
+        pprint(vars(tag))
+        pprint(vars(user))
         break
         # pprint(vars(q))
         

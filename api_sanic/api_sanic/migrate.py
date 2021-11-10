@@ -10,7 +10,7 @@ def migrate():
     Tag.drop_table(cascade=True)
     User.drop_table(cascade=True)
     db.create_tables([User, TodoItem, Tag, ConnectTodo])
-    
+
 
     User.create(user_name="hayakawa",id=1)
     User.create(user_name="sujan",id=2)
@@ -33,6 +33,7 @@ def migrate():
 
 
     ConnectTodo.create(todo=1,tag=1)
+    ConnectTodo.create(todo=1, tag=2)
     ConnectTodo.create(todo=2, tag=1)
     ConnectTodo.create(todo=2, tag=3)
     ConnectTodo.create(todo=2, tag=4)
@@ -46,3 +47,10 @@ def migrate():
 
 if __name__ == "__main__":
     migrate()
+
+
+# def migrate():
+#     pass
+
+# if __name__ == "__main__":
+#     migrate()
