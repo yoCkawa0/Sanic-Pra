@@ -1,12 +1,12 @@
 from api_sanic.api import app
 from sanic.response import json
-from api_sanic.models import TodoItem,User,ConnectTodo,Tag
+from api_sanic.models import TodoItem, User, ConnectTodo, Tag
 from pprint import pprint
 
 
-@app.route('/', methods=['GET'])
-async def test(request):
-    return json({'hello': 'world'})
+# @app.route('/', methods=['GET'])
+# async def test(request):
+#     return json({'hello': 'world'})
 
 
 @app.route('/todos', methods=['GET'])
@@ -17,15 +17,14 @@ async def get_all_todes(request):
     # ConnectTodo.select(ConnectTodo, Tag).join(Tag)
     # query = (ConnectTodo
     #          .select(ConnectTodo, TodoItem)
-    #          .join(Tag)             
+    #          .join(Tag)
     #          .switch(ConnectTodo)
     #          )
     query = (TodoItem.select(TodoItem, Tag)
-                .join(ConnectTodo)
-                .join(Tag)
-            )
-            
-    
+             .join(ConnectTodo)
+             .join(Tag)
+             )
+
     for q in query:
         tag: Tag = q.connecttodo.tag
         user: User = q.user
@@ -35,7 +34,7 @@ async def get_all_todes(request):
         pprint(vars(user))
         break
         # pprint(vars(q))
-        
+
     # todo = select_items()
     res = {
         "todos": []
@@ -46,7 +45,7 @@ async def get_all_todes(request):
             "todo_title": todo.todo_title,
             # "created_at": todo.created_at,
             # "updated_at": todo.updated_at,
-            "user":{
+            "user": {
                 "id": todo.user_id,
                 "name": todo.user.user_name
             },
