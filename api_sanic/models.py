@@ -1,4 +1,3 @@
-# from collections import defaultdict
 import datetime
 from peewee import *
 # import peewee as pe
@@ -18,7 +17,7 @@ class BaseModel(Model):
 
 class User(BaseModel):
     # userid = AutoField()
-    user_name = CharField(unique=True)
+    user_name = CharField()
 
     class Meta:
         table_name = "users"
@@ -39,7 +38,7 @@ class TodoItem(BaseModel):
 
 class Tag(BaseModel):
     # tagid = AutoField()
-    tag_name = CharField(unique=True)
+    tag_name = CharField()
 
     class Meta:
         table_name = "tags"
